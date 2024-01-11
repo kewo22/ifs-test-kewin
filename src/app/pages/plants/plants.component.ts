@@ -2,14 +2,15 @@ import { Component, Input } from '@angular/core';
 import { Subject, takeUntil, takeWhile } from 'rxjs';
 
 import { HeaderTemplateComponent } from '../../components/header-template/header-template.component';
-import { PageType } from '../../core/enums/page-type.enum';
+import { PlantCardComponent } from '../../components/plant-card/plant-card.component';
 import { PlantService } from '../../core/services/plant.service';
+import { PageType } from '../../core/enums/page-type.enum';
 import { Plant } from '../../core/interfaces/plant.interface';
 
 @Component({
   selector: 'app-plants',
   standalone: true,
-  imports: [HeaderTemplateComponent],
+  imports: [HeaderTemplateComponent, PlantCardComponent],
   templateUrl: './plants.component.html',
   styleUrl: './plants.component.scss'
 })
