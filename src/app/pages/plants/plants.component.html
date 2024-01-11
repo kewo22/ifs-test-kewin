@@ -1,0 +1,32 @@
+<app-header-template [pageType]="pageType">
+  <h1>Plants</h1>
+</app-header-template>
+
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-5 w-4/6 mx-auto mt-10"
+>
+  @for (plant of plants; track plant.id) {
+  <div class="flex flex-col rounded-md shadow-md bg-white p-3">
+    <span class="text-slate-700 font-bold">
+      {{ plant.name }}
+    </span>
+    <span class="text-slate-500">
+      {{ plant.division }}
+    </span>
+    <span class="text-slate-500">
+      {{ plant.address }}
+    </span>
+    <span class="text-slate-500">
+      {{ plant.country }}
+    </span>
+  </div>
+  }
+</div>
+
+<button
+  class="bg-blue-700 hover:bg-blue-500 hover:shadow-lg rounded text-white p-3 mx-auto w-auto block my-10 transition-all duration-100 ease-in-out"
+  (click)="onLoadMoreClick()"
+  [disabled]="!isMoreAvailable"
+>
+  @if (isLoading) { Fetching plants } @else { Load More Results }
+</button>
