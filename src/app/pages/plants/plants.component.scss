@@ -1,8 +1,10 @@
+@import "../../../variables.scss";
+
 .plants-wrapper {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 12px;
-  width: 65%;
+  width: $app-width;
   margin: 40px auto 0 auto;
 
   @media (1025px <= width) {
@@ -15,7 +17,7 @@
 }
 
 button {
-  background-color: #1d4ed8;
+  background-color: $blue-dark;
   border-radius: 5px;
   color: white;
   margin: 40px auto;
@@ -27,6 +29,6 @@ button {
   padding: 12px;
 
   &:hover {
-    background-color: #3b82f6;
+    background-color: $blue-light;
   }
 }

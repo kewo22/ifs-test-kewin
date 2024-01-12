@@ -10,6 +10,7 @@ import { ApiResponse } from '../interfaces/api-response.interface';
 })
 export class PlantService {
 
+  // TODO: get from env or global variable
   private apiUrl = 'https://sg666zbdmf.execute-api.us-east-1.amazonaws.com/dev';
 
   constructor(private http: HttpClient) { }

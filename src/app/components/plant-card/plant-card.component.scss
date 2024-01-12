@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 div {
   display: flex;
   flex-direction: column;
@@ -8,11 +10,11 @@ div {
   min-height: 100%;
 
   span {
-    color: #64748b;
+    color: $gray-light;
   }
 
   span.plant-name {
-    color: #334155;
+    color: $gray-dark;
     font-weight: bold;
   }
 }

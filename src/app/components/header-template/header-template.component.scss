@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 :host ::ng-deep h1 {
   font-size: 24px;
   line-height: 32px;
@@ -15,7 +17,7 @@
 
 section {
   height: 144px;
-  background-color: #64748b;
+  background-color: $gray-light;
   display: flex;
   flex-direction: column;
 
@@ -24,7 +26,7 @@ section {
   }
 
   a {
-    width: 65%;
+    width: $app-width;
     margin: 30px auto;
     display: flex;
     align-items: center;
@@ -33,8 +35,8 @@ section {
   }
 
   div {
-    background-color: #334155;
-    width: 65%;
+    background-color: $gray-dark;
+    width: $app-width;
     height: 80px;
     margin: 0 auto;
     padding: 20px;

@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 import { PlantsComponent } from './plants.component';
 
@@ -8,10 +11,11 @@ describe('PlantsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlantsComponent]
+      imports: [PlantsComponent, HttpClientTestingModule],
+      providers: []
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(PlantsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +24,13 @@ describe('PlantsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create renter title for Plants', () => {
+    const de: DebugElement = fixture.debugElement.query(
+      By.css('h1')
+    );
+    const el: Element = de.nativeElement;
+    expect(el.textContent).toEqual('Plants');
+  });
+
 });
