@@ -1,1 +1,27 @@
-<p>plant works!</p>
+<app-header-template [pageType]="pageType">
+  <h1>{{ plant?.name }}</h1>
+  <h3>{{ plant?.division }}</h3>
+</app-header-template>
+
+<article>
+  <div class="plant-info">
+    <div class="address">
+      <span class="label">Address</span>
+      <address>
+        <span>{{ plant?.address }}</span> <br />
+        <span>{{ plant?.city }}, {{ plant?.country }}</span> <br />
+        <span>{{ plant?.phone }}</span>
+      </address>
+    </div>
+    <div>
+      <span class="label">Manager</span>
+      <span class="manager">{{ plant?.manager }}</span>
+    </div>
+  </div>
+  <div class="plant-desc">
+    <div class="description">Description</div>
+    <p>
+      {{ plant?.description }}
+    </p>
+  </div>
+</article>

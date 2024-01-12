@@ -1,3 +1,45 @@
 :host ::ng-deep h1 {
-  @apply text-2xl text-white font-bold tracking-wide
+  font-size: 24px;
+  line-height: 32px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
+:host ::ng-deep h3 {
+  font-size: 16px;
+  line-height: 32px;
+  color: white;
+  letter-spacing: 0.025em;
+}
+
+section {
+  height: 144px;
+  background-color: #64748b;
+  display: flex;
+  flex-direction: column;
+
+  &.plants {
+    justify-content: flex-end;
+  }
+
+  a {
+    width: 65%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+  }
+
+  div {
+    background-color: #334155;
+    width: 65%;
+    height: 80px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

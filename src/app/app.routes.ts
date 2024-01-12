@@ -11,9 +11,17 @@ export const routes: Routes = [
         },
     },
     {
-        path: ':id', component: PlantComponent, data: {
+        path: 'plant/:id', component: PlantComponent, data: {
             pageType: PageType.PLANT,
         },
     },
+    // {
+    //     path: '404',
+    //     component: NotFoundComponent
+    // },
     { path: '', redirectTo: 'plants', pathMatch: "full" },
+    {
+        path: '**',
+        redirectTo: '404'
+    },
 ];

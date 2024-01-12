@@ -5,3 +5,11 @@ export interface Plant {
     id: number
     name: string
 }
+
+export interface FullPlant extends Plant {
+    city: string;
+    default_language: string;
+    description: string;
+    manager: string;
+    phone: string;
+}

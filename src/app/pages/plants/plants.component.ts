@@ -1,16 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { Subject, takeUntil, takeWhile } from 'rxjs';
+import { RouterModule } from '@angular/router';
+
+import { Subject, takeUntil } from 'rxjs';
 
 import { HeaderTemplateComponent } from '../../components/header-template/header-template.component';
 import { PlantCardComponent } from '../../components/plant-card/plant-card.component';
+
 import { PlantService } from '../../core/services/plant.service';
+
 import { PageType } from '../../core/enums/page-type.enum';
+
 import { Plant } from '../../core/interfaces/plant.interface';
 
 @Component({
   selector: 'app-plants',
   standalone: true,
-  imports: [HeaderTemplateComponent, PlantCardComponent],
+  imports: [HeaderTemplateComponent, PlantCardComponent, RouterModule],
   templateUrl: './plants.component.html',
   styleUrl: './plants.component.scss'
 })
@@ -19,12 +24,12 @@ export class PlantsComponent {
   pageType?: PageType;
 
   plants: Plant[] = []
-  offset = 0
-
-  private unsubscribe$ = new Subject<void>();
+  offset: number = 0
   canTake: Boolean = true;
   isMoreAvailable: boolean = true;
   isLoading: boolean = false
+
+  private unsubscribe$ = new Subject<void>();
 
   constructor(private plantService: PlantService) { }
 
